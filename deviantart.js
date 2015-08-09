@@ -7,7 +7,7 @@ $waxpost.query(function ($) {
     chrome.runtime.sendMessage({method: 'getSettings'}, function (response) {
         var url = response.settings['waxpost-wzlroot'] + 'submit/visual?' + $.param({
             title: title,
-            tags: tags,
+            tags: cleantags(tags),
             description: description,
             baseURL: document.location,
             imageURL: imageURL,
