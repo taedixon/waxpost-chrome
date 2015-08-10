@@ -1,0 +1,17 @@
+{
+  "name": "waxpost",
+  "title": "Waxpost (Weasyl Crossposter)",
+  "id": "jid1-wnjRmo6LJOQMIg",
+  "description": "This extension adds a 'Crosspost to Weasyl' button to various art sites.",
+  "author": "",
+  "license": "MPL 2.0",
+  "version": "0.1",
+  
+  "preferences": [{
+	"name": "wzlroot",
+	"title": "Weasyl Root",
+	"description": "You probably don't need to change this. Mostly for testing.",
+	"type": "string",
+	"value": "https://www.weasyl.com/"
+  }]
+}
