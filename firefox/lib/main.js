@@ -4,6 +4,9 @@ var prefs = require("sdk/simple-prefs").prefs;
 var tabs = require("sdk/tabs");
 var worker = require("sdk/page-worker");
 
+tabs.on("open", function(tab) {
+	console.log("open");
+	tab.on("pageshow", tabLoaded);});
 tabs.on("ready", tabLoaded);
 tabs.on("activate", tabLoaded);
 
@@ -39,7 +42,6 @@ function tabLoaded(tab) {
 }
 
 function addButton(tab, script) {
-	console.log("ab");
 	button = ActionButton({
 	  id: "waxpost-link",
 	  label: "Cross-post to Weasyl",
@@ -70,6 +72,7 @@ function handleClick(state) {
 			url += "&tags=" + encodeURI(param.tags[i]);
 		}
 		page.destroy();
+		console.log(url);
 		tabs.open(url);
 	});
 	
